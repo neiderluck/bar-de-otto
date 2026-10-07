@@ -1,0 +1,578 @@
+/* ==========================================================================
+   HOJA DE ESTILOS CSS3 - LANDING PAGE "BAR DE OTTO"
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   VARIABLES CSS (IDENTIDAD VISUAL SOLICITADA)
+   -------------------------------------------------------------------------- */
+:root {
+    --color-principal: #121212;      /* Tonos de negro azabache */
+    --color-secundario: #c5a059;     /* Dorado viejo */
+    --color-complementario: #6b1d2f; /* Vino tinto */
+    --color-fondo: #f8f6f0;          /* Hueso / Off white */
+    --color-texto: #222222;          /* Texto para lecturas claras */
+    --color-tarjeta: #ffffff;        /* Blanco neutro */
+    --color-borde: #dcd6cd;          /* Borde sutil */
+}
+
+/* --------------------------------------------------------------------------
+   RESET BÁSICO Y ESTILOS GENERALES
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Tipografía para textos */
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', 'Garamond', 'Times New Roman', serif; /* Tipografía para títulos */
+    color: var(--color-principal);
+    letter-spacing: 0.5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+/* Títulos de secciones */
+.seccion-titulo {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: var(--color-principal);
+}
+
+.seccion-subtitulo {
+    text-align: center;
+    color: var(--color-complementario);
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* --------------------------------------------------------------------------
+   1. ENCABEZADO Y MENÚ DE NAVEGACIÓN (FLEXBOX)
+   -------------------------------------------------------------------------- */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-principal);
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--color-secundario);
+}
+
+.logo h2 {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.logo span {
+    color: var(--color-secundario);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.menu a:hover {
+    background-color: var(--color-complementario);
+    color: var(--color-secundario);
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO - SECCIÓN PRINCIPAL (DOS COLUMNAS EN FLEXBOX)
+   -------------------------------------------------------------------------- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 40px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.hero-columna-izquierda {
+    flex: 1;
+}
+
+.etiqueta-negocio {
+    background-color: var(--color-complementario);
+    color: var(--color-secundario);
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid var(--color-secundario);
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: var(--color-secundario);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.eslogan {
+    font-size: 20px;
+    color: #ffffff;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    margin-bottom: 15px;
+}
+
+.descripcion-hero {
+    font-size: 16px;
+    color: #e2e8f0;
+    margin-bottom: 25px;
+}
+
+.boton-cta {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.boton-cta:hover {
+    background-color: var(--color-complementario);
+    color: #ffffff;
+}
+
+.hero-columna-derecha {
+    flex: 1;
+}
+
+.hero-columna-derecha img {
+    border: 2px solid var(--color-secundario);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN NOSOTROS (FLEXBOX)
+   -------------------------------------------------------------------------- */
+.nosotros {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 40px;
+}
+
+.nosotros-imagen {
+    flex: 1;
+}
+
+.nosotros-contenido {
+    flex: 1;
+}
+
+.nosotros-contenido h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-secundario);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.nosotros-contenido p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   4. SECCIÓN PRODUCTOS O SERVICIOS (TARJETAS EN FLEXBOX)
+   -------------------------------------------------------------------------- */
+.productos {
+    padding: 60px 40px;
+    background-color: #f2efe9;
+}
+
+.productos-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.producto-tarjeta {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto-tarjeta:hover {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-secundario);
+}
+
+.producto-tarjeta img {
+    margin-bottom: 15px;
+    height: 190px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.producto-tarjeta h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-principal);
+}
+
+.producto-tarjeta p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #444444;
+}
+
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-complementario);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.boton-tarjeta {
+    display: block;
+    text-align: center;
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid var(--color-secundario);
+}
+
+.boton-tarjeta:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+}
+
+/* --------------------------------------------------------------------------
+   5. SECCIÓN BENEFICIOS O SERVICIOS (FLEXBOX)
+   -------------------------------------------------------------------------- */
+.servicios {
+    padding: 60px 40px;
+}
+
+.servicios-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.servicio-tarjeta {
+    flex: 1;
+    min-width: 260px;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio-tarjeta img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid var(--color-secundario);
+}
+
+.servicio-tarjeta h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.servicio-tarjeta p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.boton-servicio {
+    background-color: var(--color-complementario);
+    color: #ffffff;
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.boton-servicio:hover {
+    background-color: #4a1220;
+}
+
+/* --------------------------------------------------------------------------
+   6. TABLA DE DATOS
+   -------------------------------------------------------------------------- */
+.tabla-seccion {
+    padding: 60px 40px;
+    background-color: #f2efe9;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-cursos {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+}
+
+.tabla-cursos th,
+.tabla-cursos td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde);
+    font-size: 14px;
+}
+
+.tabla-cursos th {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    font-family: 'Georgia', serif;
+}
+
+.tabla-cursos tr:hover {
+    background-color: #fdfbf7;
+}
+
+/* --------------------------------------------------------------------------
+   7. SECCIÓN GALERÍA (FLEXBOX)
+   -------------------------------------------------------------------------- */
+.galeria {
+    padding: 60px 40px;
+}
+
+.galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.galeria-item {
+    width: calc(33.333% - 20px);
+    min-width: 250px;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--color-borde);
+}
+
+.galeria-item img:hover {
+    opacity: 0.9;
+    border-color: var(--color-secundario);
+}
+
+/* --------------------------------------------------------------------------
+   8. SECCIÓN FORMULARIO DE CONTACTO
+   -------------------------------------------------------------------------- */
+.contacto {
+    padding: 60px 40px;
+    background-color: #f2efe9;
+}
+
+.formulario-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-grupo label {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--color-principal);
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    outline: 2px solid var(--color-secundario);
+    background-color: #ffffff;
+}
+
+.boton-enviar {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    padding: 12px;
+    border: 1px solid var(--color-secundario);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-enviar:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+}
+
+/* --------------------------------------------------------------------------
+   9. PIE DE PÁGINA - FOOTER (FLEXBOX)
+   -------------------------------------------------------------------------- */
+.pie-pagina {
+    background-color: var(--color-principal);
+    color: #ffffff;
+    padding: 40px 40px 20px 40px;
+    border-top: 2px solid var(--color-secundario);
+}
+
+.footer-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-columna {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-columna h3 {
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+}
+
+.footer-columna h4 {
+    color: var(--color-secundario);
+    margin-bottom: 12px;
+}
+
+.footer-eslogan {
+    color: var(--color-secundario);
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
+}
+
+.footer-columna a {
+    color: var(--color-secundario);
+    text-decoration: none;
+}
+
+.footer-columna a:hover {
+    text-decoration: underline;
+}
+
+.footer-derechos {
+    text-align: center;
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #aaaaaa;
+}
+
+/* --------------------------------------------------------------------------
+   DISEÑO RESPONSIVE BÁSICO (MEDIA QUERY PARA PANTALLAS MÓVILES)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .nosotros {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .producto-tarjeta,
+    .galeria-item {
+        width: 100%;
+    }
+
+    .servicios-contenedor {
+        flex-direction: column;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+}
